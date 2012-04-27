@@ -47,7 +47,10 @@ LONG_BREAK_TIME=$(zenity --entry --title="Long Break time" --text="Enter the tim
 while [ answer != "0" ]
 do
 
-answer=$(zenity --list --radiolist --width=350 --height=300 --column "Selection" --column "Choice" --column "Description" FALSE 0 "Exit" FALSE 1 "Start Pomodoro" FALSE 2 "Break" FALSE 3 "Long Breaks" TRUE 4 "Open TodoToday List" )
+answer=$(zenity --list --radiolist --width=350 --height=300 \\
+   --column "Selection" --column "Choice" --column "Description" \\
+   FALSE 0 "Exit" FALSE 1 "Start Pomodoro" FALSE 2 "Break" \\ 
+   FALSE 3 "Long Breaks" TRUE 4 "Open TodoToday List" )
 
    case $answer in
    0) break ;;
